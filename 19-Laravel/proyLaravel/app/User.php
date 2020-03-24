@@ -18,11 +18,11 @@ class User extends Authenticatable
     protected $fillable = [
         'fullname', 
         'email', 
-        'phone', 
-        'birthdate', 
-        'gender', 
-        'address', 
-        'photo', 
+        'photo',
+        'birthdate',
+        'gender',
+        'address',
+        'photo',
         'role',
         'status',
         'password'
@@ -46,8 +46,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function articles() {
+    public function articles(){
         return $this->hasMany('App\Article');
     }
 
+   
 }

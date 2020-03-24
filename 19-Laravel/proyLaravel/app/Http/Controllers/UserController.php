@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('users.index')->with('users',$users);
     }
 
     /**
@@ -24,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.add');
+        return view('users.create');
     }
 
     /**
@@ -35,18 +37,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        $user = new App\User;
-        $user->fullname = $request->fullname;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
+        // dd($request->all());
+        $user = new User;
+        $user->fullname   = $request->fullname;
+        $user->email      = $request->email;
+        $user->phone      = $request->phone;
         $user->birthdate = $request->birthdate;
-        $user->gender  = $request->gender;
-        $user->address  = $request->address;
-        $user->password = $request->password;
+        $user->gender     = $request->gender;
+        $user->address    = $request->address;
+        $user->password  = bcrypt($request['password']);
 
-        if($user->save()){
-            return redirect('users')->with('message','El Usuario: '.$user->fullname,'Fue Adicionado con exito');
+        if ($user->save()) {
+            return redirect('users')->with('message','El usuario '.$user->fullname.' Fue adicionado con éxito');
         }
     }
 

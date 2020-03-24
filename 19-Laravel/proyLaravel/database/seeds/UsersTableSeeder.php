@@ -12,28 +12,30 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'fullname'  => 'Jeremias Springfiel',
-            'email'     => 'jeremias@gmail.com',
-            'phone'     => 3239090345,
-            'birthdate' => '1950-11-12',
-            'gender'    => 'Male',
-            'address'   => 'Street Siempre Viva',
-            'role'      => 'Admin',
-            'password' => Hash::make('admin'),
-        ]);
+			'fullname'	=>	'Jeremias Springfield',
+			'email'	    =>	'jeremias@gmail.com',
+			'phone'	    =>	322314589,
+			'birthdate' =>  '1958-11-12',
+			'gender'	=>	'Male',
+			'address'	=>	'Street Siempre Viva',
+			'role'		=>	'Admin',
+			'password'	=>	bcrypt('Admin'),
+		]);
 
-        $user = new App\User;
-        $user->fullname  = 'David';
-        $user->email     = 'david@misena.edu.co';
-        $user->phone     = 310458578;
-        $user->birthdate = '2002-01-27';
-        $user->gender    = 'Male';
-        $user->address   = 'Cll 105-19';
-        $user->role      = 'Admin';
-        $user->password  = bcrypt('admin');
-        $user->save();
+		$user = new App\User;
+		$user->fullname = 'David Zapata';
+		$user->email 	= 'david@misena.edu.co';
+		$user->phone	= 3148706790;
+		$user->birthdate= '2002-01-27';
+		$user->gender 	= 'Male';
+		$user->address 	= 'Cll 105 34-18';
+		$user->role 	= 'Admin';
+		$user->password = bcrypt('admin');
+		$user->save();
 
-        // Factory
-        factory(App\User::class, 100)->create();
+		// Factory
+		factory(App\User::class, 1000)->create();
+			
+		
     }
 }

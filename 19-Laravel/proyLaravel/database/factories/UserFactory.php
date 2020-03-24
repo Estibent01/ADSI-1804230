@@ -19,16 +19,16 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'fullname'          => $faker->name,
-        'email'             => $faker->unique()->safeEmail,
-        'phone'             => $faker->numberBetween($min = 3100000000, 
-        											 $max = 3200000000),
-        'birthdate'         => $faker->date,
-        'gender'            => $faker->randomElement(
-        					   $array = array ('Female','Male')),
-        'address'           => $faker->address,
+        'fullname'  		=> $faker->name,
+        'email' 			=> $faker->unique()->safeEmail,
+        'phone'				=> $faker->numberBetween($min = 310000000,
+        											 $max = 320000000),
+        'birthdate'			=> $faker->date,
+        'gender'			=> $faker->randomElement(
+        						$array = array ('Female','Male')),
+        'address'			=> $faker->address,
         'email_verified_at' => now(),
-        'password'          => bcrypt('12345'),
+        'password' 			=> bcrypt('12345'), // password
         'remember_token'    => Str::random(10),
     ];
 });

@@ -12,18 +12,20 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name'        => 'Technology',
-            'description' => 'This category shows info about technology products that you can see.',
-        ]);
+			'name'			 =>	'Technology',
+			'description'	 =>	'Esta categoria',
+		]);
 
-        $cat = new App\Category;
-        $cat->name         = 'Sport';
-        $cat->description  = 'This category shows info about sport products that you can see.';
-        $cat->save();
+		$categories = new App\Category;
+		$categories->name 			= 'Sport';
+		$categories->description 	= 'Esta Categoria';
+		$categories->save();
 
-        $cat = new App\Category;
-        $cat->name         = 'Home';
-        $cat->description  = 'This category shows info about home products that you can see.';
-        $cat->save();
+		$categories = new App\Category;
+		$categories->name 			= 'Home';
+		$categories->description 	= 'Esta Categoria';
+		$categories->save();
+
+
     }
 }

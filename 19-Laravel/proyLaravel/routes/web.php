@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+    
 Route::get('usuarios', function () {
-    //$users = App\User::all();
-    $users = App\User::take(50)->get();
+    $users = App\User::take(25)->get();
     foreach ($users as $user) {
-    	echo "<li>",$user->fullname."</li>";
+    	echo "<li>".$user->fullname."<br></li>";
     }
 });
 
-Route::resource('users','UserController');
+Route::resource('users', 'UserController');
