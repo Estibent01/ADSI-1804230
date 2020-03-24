@@ -23,12 +23,12 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $user = new App\User;
-        $user->fullname  = 'Oscar Fernando Aristizabal';
-        $user->email     = 'ofac@misena.edu.co';
-        $user->phone     = 3103972380;
-        $user->birthdate = '1981-10-18';
+        $user->fullname  = 'David';
+        $user->email     = 'david@misena.edu.co';
+        $user->phone     = 310458578;
+        $user->birthdate = '2002-01-27';
         $user->gender    = 'Male';
-        $user->address   = 'Cll 128-129';
+        $user->address   = 'Cll 105-19';
         $user->role      = 'Admin';
         $user->password  = bcrypt('admin');
         $user->save();

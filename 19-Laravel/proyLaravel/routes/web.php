@@ -22,3 +22,5 @@ Route::get('usuarios', function () {
     	echo "<li>",$user->fullname."</li>";
     }
 });
+
+Route::resource('users','UserController');
